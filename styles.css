@@ -1,0 +1,107 @@
+#mainNav .navbar-toggler {
+    color: black;
+}
+#mainNav .navbar-nav>li.nav-item>a.nav-link.active {
+    color: white !important;
+    background: black;
+}
+a {
+    text-decoration: none !important;
+}
+a:hover {
+    color: grey;
+    text-decoration: none
+}
+a.text-dark:hover {
+    color: grey !important;
+}
+.divider-custom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.divider-custom .divider-custom-line {
+    width: 100%;
+    max-width: 7rem;
+    height: 0.25rem;
+    background-color: #000;
+    border-radius: 1rem;
+    border-color: #000!important
+}
+.divider-custom .divider-custom-line:first-child {
+    margin-right: 1rem
+}
+.divider-custom .divider-custom-line:last-child {
+    margin-left: 1rem
+}
+.divider-custom .divider-custom-icon {
+    color: #000;
+    font-size: 2rem
+}
+.btn-redes {
+    border-radius: 100%;
+    display: inline-flex;
+    width: 3.25rem;
+    height: 3.25rem;
+    font-size: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    border: .125rem solid
+}
+.btn-outline-dark {
+    border-color: black !important;
+    color: black;
+}
+.btn-outline-dark:hover {
+    background-color: black;
+}
+.boton {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    padding-left: 20px;
+    background: #000;
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    margin: 40px 5px 0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 12px 20px -10px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: 0px 12px 20px -10px rgba(0, 0, 0, 0.65);
+    box-shadow: 0px 12px 20px -10px rgba(0, 0, 0, 0.65);
+    transition: box-shadow 0.5s;
+}
+.boton:hover {
+    color: white;
+    -webkit-box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.65);
+    box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.65);
+    transition: box-shadow 0.5s;
+}
+.boton.apple {
+    background-image: url("http://vignette2.wikia.nocookie.net/respawnables/images/2/2f/Apple-logo-white-md.png/revision/latest?cb=20160224124036");
+    background-size: 20px auto;
+    background-repeat: no-repeat;
+    background-position: 20px center;
+}
+.boton.google {
+    background-image: url("http://vignette3.wikia.nocookie.net/starwars/images/e/ee/Google_Play_logo.png/revision/latest?cb=20141119230612");
+    background-size: 20px auto;
+    background-repeat: no-repeat;
+    background-position: 20px center;
+}
+a.custom-card, a.custom-card:hover {
+    color: black !important;
+    text-decoration: none !important;
+}
+.card {
+transition: 0.5s all ease-in-out;
+}
+.card:hover {
+  transform: scale(1.03);
+}
