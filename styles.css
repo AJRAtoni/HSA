@@ -1,3 +1,6 @@
+body {
+    background-color: black;
+}
 #mainNav .navbar-toggler {
     color: black;
 }
@@ -50,12 +53,12 @@ a.text-dark:hover {
     border: .125rem solid
 }
 .btn-outline-dark {
-    border-color: #212529 !important;
+    border-color: black !important;
     color: white;
 }
 .btn-outline-dark:hover {
     background-color: white;
-    color: #212529;
+    color: black;
 }
 .boton {
     display: inline-block;
