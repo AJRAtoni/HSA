@@ -1,0 +1,20 @@
+title: Higher Standards Aerospace
+description: Higher Standards Aerospace is an FAA Part 145 repair station specializing in repair and overhaul of aircraft fuel and hydraulic components in Doral, FL.
+url: https://ajratoni.github.io
+baseurl: /HSA
+lang: en
+timezone: America/New_York
+permalink: pretty
+preview_mode: true
+google_tag_id: GT-5DDFDDXQ
+
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.local
+  - Gemfile.local.lock
+  - Gemfile.lock
+  - README.md
+  - vendor

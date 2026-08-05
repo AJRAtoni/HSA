@@ -1,0 +1,10 @@
+_site/
+.jekyll-cache/
+.sass-cache/
+vendor/
+Gemfile.local.lock
+.bundle/
+.DS_Store
+# Kept locally until HSA explicitly approves publishing its certificates in
+# this public repository. The preview links to the currently public originals.
+assets/documents/
