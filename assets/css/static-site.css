@@ -72,6 +72,8 @@ header .mobile .brand { display: flex !important; justify-content: center !impor
 
 body.blog,
 body.post {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   background: #f5f7f9;
   color: #20262d;
@@ -79,8 +81,14 @@ body.post {
 
 body.blog > header,
 body.post > header {
+  height: 130px;
   background: rgba(255, 255, 255, 0.97);
   box-shadow: 0 1px 0 rgba(0, 72, 140, 0.1);
+}
+
+body.blog > header .desktop nav,
+body.post > header .desktop nav {
+  height: 130px;
 }
 
 body.blog > footer,
@@ -93,7 +101,9 @@ body.post > footer {
 
 .blog-page,
 .blog-post {
-  padding: 170px 0 90px;
+  flex: 1 0 auto;
+  width: 100%;
+  padding: 200px 0 90px;
 }
 
 .blog-page-heading {
@@ -229,6 +239,8 @@ body.post > footer {
   .section.homepage-intro .layer { padding: 10px; }
   .fp-tableCell { height: 0 !important; }
   .homepage-facilities { height: 0 !important; }
+  body.blog > header,
+  body.post > header { height: 100px; }
   .blog-page,
   .blog-post { padding: 125px 0 60px; }
   .blog-page .container { max-width: 100%; overflow: hidden; }
