@@ -1,20 +1,50 @@
 (function () {
   'use strict';
 
-  var form = document.querySelector('[data-static-contact]');
+  var form = document.querySelector('[data-formsubmit-contact]');
   if (form) {
     form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      if (!form.reportValidity()) return;
+      var departmentSelect = form.elements.department;
+      var selectedOption = departmentSelect.options[departmentSelect.selectedIndex];
+      var endpoint = selectedOption ? selectedOption.getAttribute('data-formsubmit-endpoint') : '';
+      var departmentId = selectedOption ? selectedOption.getAttribute('data-department-id') : '';
+      var status = form.querySelector('[data-form-status]');
+      var submitButton = form.querySelector('[type="submit"]');
 
-      var name = form.elements['your-name'].value.trim();
-      var email = form.elements['your-email'].value.trim();
-      var message = form.elements['your-message'].value.trim();
-      var subject = encodeURIComponent('Website inquiry from ' + name);
-      var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
-      if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', { method: 'email' });
-      window.location.href = 'mailto:sales@higherstandardsaerospace.com?subject=' + subject + '&body=' + body;
+      if (!endpoint || endpoint.indexOf('https://formsubmit.co/') !== 0) {
+        event.preventDefault();
+        status.textContent = 'Please select a department before sending your message.';
+        status.className = 'static-form-status contact-form-error';
+        departmentSelect.focus();
+        return;
+      }
+
+      form.action = endpoint;
+      form.elements._subject.value = 'HSA Website Inquiry - ' + selectedOption.value;
+      status.textContent = 'Sending your message...';
+      status.className = 'static-form-status contact-form-progress';
+      submitButton.disabled = true;
+      submitButton.value = 'Sending...';
+
+      try {
+        window.sessionStorage.setItem('hsaContactSubmissionPending', departmentId || 'contact');
+      } catch (error) {
+        // The form still works when browser storage is unavailable.
+      }
     });
+  }
+
+  var contactSuccess = document.querySelector('[data-contact-success]');
+  if (contactSuccess) {
+    try {
+      var submittedDepartment = window.sessionStorage.getItem('hsaContactSubmissionPending');
+      if (submittedDepartment && typeof window.gtag === 'function') {
+        window.gtag('event', 'generate_lead', { method: 'formsubmit', department: submittedDepartment });
+      }
+      window.sessionStorage.removeItem('hsaContactSubmissionPending');
+    } catch (error) {
+      // The confirmation page does not depend on analytics or browser storage.
+    }
   }
 
   var search = document.getElementById('buscador');
@@ -36,4 +66,3 @@
     });
   }
 }());
-

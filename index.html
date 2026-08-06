@@ -134,7 +134,7 @@ canonical_url: https://higherstandardsaerospace.com/
         <div class="contact-method col-md-4"><div class="img"><img src="{{ '/assets/images/i5.svg' | relative_url }}" alt=""></div><p>Phone: +(1) 954 776 7555</p></div>
         <div class="contact-method col-md-4"><div class="img"><img src="{{ '/assets/images/i6-01.svg' | relative_url }}" alt=""></div><p>sales@higherstandardsaerospace.com</p></div>
       </div>
-      <div class="row contact-methods" style="padding-top: 0;">
+      <div class="row contact-methods department-contacts" style="padding-top: 0;">
         <div class="contact-method col-md-6"><p style="margin-bottom: 0;">Accounting:</p><p><a href="mailto:accounting@higherstandardsaerospace.com" style="color: black;">accounting@higherstandardsaerospace.com</a></p></div>
         <div class="contact-method col-md-6"><p style="margin-bottom: 0;">Business Development:</p><p><a href="mailto:john.valencia@higherstandardsaerospace.com" style="color: black;">john.valencia@higherstandardsaerospace.com</a></p></div>
         <div class="contact-method col-md-6"><p style="margin-bottom: 0;">Purchasing:</p><p><a href="mailto:gonzalo.ortiz@higherstandardsaerospace.com" style="color: black;">gonzalo.ortiz@higherstandardsaerospace.com</a></p></div>
@@ -143,13 +143,38 @@ canonical_url: https://higherstandardsaerospace.com/
       <div class="row">
         <div class="col-12">
           <div class="wpcf7">
-            <form class="wpcf7-form" data-static-contact aria-label="Contact form">
-              <div class="row">
-                <div class="col-sm-6"><p><span class="wpcf7-form-control-wrap"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text" required placeholder="NAME" type="text" name="your-name"></span></p></div>
-                <div class="col-sm-6"><p><span class="wpcf7-form-control-wrap"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text" required placeholder="EMAIL" type="email" name="your-email"></span></p></div>
+            <form class="wpcf7-form" data-formsubmit-contact action="{{ site.data.contact_departments.first.endpoint }}" method="POST" accept-charset="UTF-8" aria-label="Contact form">
+              <input type="hidden" name="_subject" value="HSA Website Inquiry">
+              <input type="hidden" name="_next" value="{{ '/contact-success/' | absolute_url }}">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_url" value="{{ page.url | absolute_url }}">
+              <div class="contact-honey" aria-hidden="true">
+                <label for="contact-company-website">Leave this field empty</label>
+                <input id="contact-company-website" type="text" name="_honey" tabindex="-1" autocomplete="off">
               </div>
               <div class="row">
-                <div class="col-sm-12"><p><span class="wpcf7-form-control-wrap"><textarea cols="40" rows="10" maxlength="2000" class="wpcf7-form-control wpcf7-textarea" placeholder="MESSAGE" name="your-message"></textarea></span><br><input class="wpcf7-form-control wpcf7-submit" type="submit" value="Send"></p></div>
+                <div class="col-sm-6"><p><span class="wpcf7-form-control-wrap"><input size="40" maxlength="120" class="wpcf7-form-control wpcf7-text" required autocomplete="name" placeholder="NAME" aria-label="Name" type="text" name="name"></span></p></div>
+                <div class="col-sm-6"><p><span class="wpcf7-form-control-wrap"><input size="40" maxlength="254" class="wpcf7-form-control wpcf7-email wpcf7-text" required autocomplete="email" placeholder="EMAIL" aria-label="Email" type="email" name="email"></span></p></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <p>
+                    <span class="wpcf7-form-control-wrap">
+                      <select class="wpcf7-form-control wpcf7-select" required aria-label="Department" name="department">
+                        <option value="" selected disabled>SELECT DEPARTMENT</option>
+                        {% for department in site.data.contact_departments %}
+                        <option value="{{ department.label }}" data-department-id="{{ department.id }}" data-formsubmit-endpoint="{{ department.endpoint }}">{{ department.label | upcase }}</option>
+                        {% endfor %}
+                      </select>
+                    </span>
+                  </p>
+                  <p><span class="wpcf7-form-control-wrap"><textarea cols="40" rows="7" maxlength="2000" class="wpcf7-form-control wpcf7-textarea" required placeholder="MESSAGE" aria-label="Message" name="message"></textarea></span></p>
+                  <label class="contact-consent"><input type="checkbox" name="privacy-consent" value="Accepted" required> <span>I agree to the processing of my information as described in the <a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a>.</span></label>
+                  <p class="contact-form-note">Please do not include payment information, passwords, or sensitive technical data.</p>
+                  <noscript><p class="contact-form-error">JavaScript is required for department routing. You may also use the department email links above.</p></noscript>
+                  <p class="static-form-status" data-form-status role="status" aria-live="polite"></p>
+                  <p><input class="wpcf7-form-control wpcf7-submit" type="submit" value="Send"></p>
+                </div>
               </div>
             </form>
           </div>

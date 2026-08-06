@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title | default: site.title }}</title>
     <meta name="description" content="{{ page.description | default: site.description | escape }}">
-    {% if site.preview_mode %}<meta name="robots" content="noindex, nofollow">{% else %}<meta name="robots" content="index, follow, max-image-preview:large">{% endif %}
+    {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% elsif site.preview_mode %}<meta name="robots" content="noindex, nofollow">{% else %}<meta name="robots" content="index, follow, max-image-preview:large">{% endif %}
     <link rel="canonical" href="{{ page.canonical_url | default: page.url | absolute_url }}">
     <link rel="icon" href="{{ '/assets/images/cropped-FavIconb-03-32x32.png' | relative_url }}" sizes="32x32">
     <link rel="icon" href="{{ '/assets/images/cropped-FavIconb-03-192x192.png' | relative_url }}" sizes="192x192">
@@ -36,4 +36,3 @@
     <script src="{{ '/assets/js/static-site.js' | relative_url }}"></script>
   </body>
 </html>
-

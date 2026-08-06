@@ -17,4 +17,5 @@ exclude:
   - Gemfile.local.lock
   - Gemfile.lock
   - README.md
+  - FORM_SUBMIT_IMPLEMENTATION_CHECKLIST.md
   - vendor
