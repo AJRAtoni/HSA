@@ -1,5 +1,12 @@
 .grecaptcha-badge { display: none !important; }
 
+body.page-template-page-homepage #fp-nav { pointer-events: auto; }
+body.page-template-page-homepage #fp-nav a { cursor: pointer; }
+body.page-template-page-homepage #fp-nav a:focus-visible {
+  outline: 2px solid #00488c;
+  outline-offset: 3px;
+}
+
 header .desktop nav li.menu-item a {
   font-family: eurostile, sans-serif !important;
   font-style: normal;
