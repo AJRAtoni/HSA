@@ -56,54 +56,31 @@ header .mobile .brand { display: flex !important; justify-content: center !impor
 }
 
 .section.homepage-contact form select {
+  display: block;
   width: 100%;
   margin-bottom: 10px;
-  padding: 10px;
+  min-height: 45px;
+  padding: 10px 44px 10px 10px;
   border: 2px solid #fff;
   border-radius: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background-color: #000;
+  background-image: linear-gradient(45deg, transparent 50%, #fff 50%), linear-gradient(135deg, #fff 50%, transparent 50%);
+  background-position: calc(100% - 17px) 50%, calc(100% - 12px) 50%;
+  background-repeat: no-repeat;
+  background-size: 5px 5px, 5px 5px;
   color: #fff;
   box-sizing: border-box;
-  font-family: eurostile, sans-serif;
-  font-size: 14px;
+  font: inherit;
+  opacity: 0.5;
   text-transform: uppercase;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .section.homepage-contact form select option { color: #000; background: #fff; }
 .section.homepage-contact form textarea { height: 120px; }
 .section.homepage-contact form input[type=submit][disabled] { cursor: wait; opacity: 0.65; }
-
-.contact-honey {
-  position: absolute !important;
-  left: -10000px !important;
-  width: 1px !important;
-  height: 1px !important;
-  overflow: hidden !important;
-}
-
-.contact-consent {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 8px;
-  margin: 0 auto 5px;
-  color: #222;
-  font-family: eurostile, sans-serif;
-  font-size: 12px;
-  line-height: 1.4;
-  text-align: left;
-}
-
-.section.homepage-contact form .contact-consent input[type=checkbox] {
-  width: auto;
-  min-width: 14px;
-  margin: 2px 0 0;
-  padding: 0;
-  border: 0;
-  opacity: 1;
-}
-
-.contact-consent a { color: #00488c; text-decoration: underline; }
 .contact-form-note { margin: 3px 0; color: #444; font-size: 11px; }
 .static-form-status { min-height: 18px; margin: 4px 0; font-size: 12px; }
 .contact-form-progress { color: #00488c; }
@@ -130,7 +107,6 @@ header .mobile .brand { display: flex !important; justify-content: center !impor
 
 @media (max-width: 991.98px) {
   .section.homepage-contact form textarea { height: 140px; }
-  .contact-consent { justify-content: flex-start; }
   .contact-result-page { padding-top: 140px; }
 }
 
@@ -140,7 +116,6 @@ header .mobile .brand { display: flex !important; justify-content: center !impor
   .section.homepage-contact .department-contacts { display: none; }
   .section.homepage-contact form p { margin-bottom: 6px; }
   .section.homepage-contact form textarea { height: 90px; }
-  .section.homepage-contact .contact-consent { margin-bottom: 2px; }
   .section.homepage-contact .static-form-status { min-height: 14px; margin: 2px 0; }
 }
 

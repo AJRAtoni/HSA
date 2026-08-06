@@ -148,15 +148,7 @@ canonical_url: https://higherstandardsaerospace.com/
               <input type="hidden" name="_next" value="{{ '/contact-success/' | absolute_url }}">
               <input type="hidden" name="_template" value="table">
               <input type="hidden" name="_url" value="{{ page.url | absolute_url }}">
-              <div class="contact-honey" aria-hidden="true">
-                <label for="contact-company-website">Leave this field empty</label>
-                <input id="contact-company-website" type="text" name="_honey" tabindex="-1" autocomplete="off">
-              </div>
-              <div class="row">
-                <div class="col-sm-6"><p><span class="wpcf7-form-control-wrap"><input size="40" maxlength="120" class="wpcf7-form-control wpcf7-text" required autocomplete="name" placeholder="NAME" aria-label="Name" type="text" name="name"></span></p></div>
-                <div class="col-sm-6"><p><span class="wpcf7-form-control-wrap"><input size="40" maxlength="254" class="wpcf7-form-control wpcf7-email wpcf7-text" required autocomplete="email" placeholder="EMAIL" aria-label="Email" type="email" name="email"></span></p></div>
-              </div>
-              <div class="row">
+              <div class="row contact-department-row">
                 <div class="col-sm-12">
                   <p>
                     <span class="wpcf7-form-control-wrap">
@@ -168,8 +160,15 @@ canonical_url: https://higherstandardsaerospace.com/
                       </select>
                     </span>
                   </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6"><p><span class="wpcf7-form-control-wrap"><input size="40" maxlength="120" class="wpcf7-form-control wpcf7-text" required autocomplete="name" placeholder="NAME" aria-label="Name" type="text" name="name"></span></p></div>
+                <div class="col-sm-6"><p><span class="wpcf7-form-control-wrap"><input size="40" maxlength="254" class="wpcf7-form-control wpcf7-email wpcf7-text" required autocomplete="email" placeholder="EMAIL" aria-label="Email" type="email" name="email"></span></p></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
                   <p><span class="wpcf7-form-control-wrap"><textarea cols="40" rows="7" maxlength="2000" class="wpcf7-form-control wpcf7-textarea" required placeholder="MESSAGE" aria-label="Message" name="message"></textarea></span></p>
-                  <label class="contact-consent"><input type="checkbox" name="privacy-consent" value="Accepted" required> <span>I agree to the processing of my information as described in the <a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a>.</span></label>
                   <p class="contact-form-note">Please do not include payment information, passwords, or sensitive technical data.</p>
                   <noscript><p class="contact-form-error">JavaScript is required for department routing. You may also use the department email links above.</p></noscript>
                   <p class="static-form-status" data-form-status role="status" aria-live="polite"></p>

@@ -1,19 +1,19 @@
 # HSA FormSubmit implementation checklist
 
-Status: locally implemented; recipient activation and live delivery tests are pending.
+Status: published to the GitHub Pages preview; recipient activation and live delivery tests are pending.
 
 ## Completed locally
 
 - [x] Confirm the five intended departments and current recipient addresses.
 - [x] Store the department routing table in `_data/contact_departments.yml`.
 - [x] Replace the `mailto:` fallback with a real `POST` form for FormSubmit.
-- [x] Add a required department dropdown.
+- [x] Add a required department dropdown as the first visible form field.
 - [x] Route each dropdown choice directly to its department endpoint.
 - [x] Use the visitor's email as the message reply address.
 - [x] Add a department-specific email subject.
 - [x] Keep FormSubmit's built-in reCAPTCHA enabled.
-- [x] Add a honeypot field for additional bot filtering.
-- [x] Add required consent and a link to the privacy information.
+- [x] Remove the optional honeypot field after it rendered visibly in the preview.
+- [x] Keep the inquiry form free of a mandatory consent checkbox.
 - [x] Add a warning not to submit sensitive information.
 - [x] Add sending and duplicate-submit protection.
 - [x] Add a first-party confirmation page at `/contact-success/`.
@@ -74,7 +74,7 @@ After activation, FormSubmit may provide each recipient with a random endpoint s
 
 ## Publication and production cutover
 
-- [ ] Publish the prepared changes to the personal GitHub Pages preview.
+- [x] Publish the prepared changes to the personal GitHub Pages preview.
 - [ ] Complete activation and delivery verification on the GitHub Pages preview.
 - [ ] Obtain HSA approval for the form, privacy wording, and routing matrix.
 - [ ] Change `_config.yml` from preview settings to the production domain only when the full website is approved.

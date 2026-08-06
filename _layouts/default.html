@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,500|Roboto:400,500" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/jni6dje.css">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/static-site.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/static-site.css' | relative_url }}?v={{ site.static_asset_version }}">
     {% if site.google_tag_id %}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_tag_id }}"></script>
     <script>
@@ -33,6 +33,6 @@
     {% if page.show_footer != false %}{% include footer.html %}{% endif %}
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/static-site.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/static-site.js' | relative_url }}?v={{ site.static_asset_version }}"></script>
   </body>
 </html>

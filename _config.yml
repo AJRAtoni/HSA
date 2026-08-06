@@ -7,6 +7,7 @@ timezone: America/New_York
 permalink: pretty
 preview_mode: true
 google_tag_id: GT-5DDFDDXQ
+static_asset_version: 20260806-2
 
 plugins:
   - jekyll-sitemap
